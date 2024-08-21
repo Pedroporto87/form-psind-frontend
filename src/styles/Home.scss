@@ -1,0 +1,153 @@
+// src/styles/Home.scss
+
+@font-face {
+    font-family: "Roboto";
+    src: url("font/Roboto-Regular.ttf") format("truetype");
+  }
+  
+  $form-background: #fff;
+  $form-border-radius: 10px;
+  $form-padding: 20px;
+  $form-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  $form-width: 37.5rem;
+  $form-max-width: 100%;
+  $form-margin: 10px;
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d3638;
+    margin-top: 3.125rem;
+  }
+  
+  .formulario {
+    background: $form-background;
+    border-radius: $form-border-radius;
+    padding: $form-padding;
+    box-shadow: $form-shadow;
+    width: $form-width;
+    max-width: $form-max-width;
+    margin: $form-margin;
+  
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="checkbox"],
+      select,
+      textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+  
+      input[type="checkbox"] {
+        font-family: "Roboto";
+      }
+  
+      label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        font-family: "Roboto";
+  
+        input[type="text"] {
+          margin-top: 10px;
+          flex: 1;
+          font-family: "Roboto";
+        }
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        max-height: 150px;
+        overflow-y: auto;
+  
+        li {
+          padding: 10px;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: #f0f0f0;
+          }
+        }
+      }
+  
+      p {
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 10px;
+        font-family: "Roboto";
+      }
+  
+      textarea {
+        max-width: 100%;
+        min-height: 150px; // Altura mínima do textarea
+        max-height: 300px; // Altura máxima do textarea
+        overflow: auto;
+        resize: none; // Impede o redimensionamento da textarea
+      }
+  
+      button {
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+  
+      .typeJobs {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+  
+        p {
+          font-size: 20px;
+          font-weight: 300;
+          margin-bottom: 10px;
+          font-family: "Roboto";
+        }
+  
+        label {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+          font-size: 20px;
+          font-weight: 300;
+  
+          input[type="text"] {
+            margin-top: 10px;
+            width: 100%;
+          }
+        }
+  
+        .add-icon {
+          cursor: pointer;
+          font-size: 16px;
+          margin-top: 10px;
+          align-self: flex-end;
+  
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+      }
+    }
+  }

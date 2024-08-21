@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("font/Roboto-Regular.ttf")
+      format("truetype");
+  }
+
+$navbar-background: #fff;
+$navbar-height: 150px; // Aumentei a altura para acomodar imagens maiores
+$navbar-padding: 0 20px;
+$navbar-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.navbar {
+  background-color: $navbar-background;
+  height: $navbar-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: $navbar-padding;
+  box-shadow: $navbar-shadow;
+  width: 100%; // Ocupa a largura total da tela
+  position: fixed; // Fixa a navbar no topo da tela
+  top: 0;
+  left: 0;
+
+  .navbar-title {
+    font-size: 30px; // Aumentei o tamanho da fonte
+    font-weight: bold;
+    font-family: "Roboto";
+    color: #0D3638;
+    text-align: center;
+    flex: 1;
+    margin: 0 20px; // Adicionei margem para centralizar melhor o título
+  }
+
+  .navbar-image {
+    width: 210px; // Aumentei o tamanho das imagens
+    height: 100px;
+    margin: 50px
+  }
+  .navbar-left .navbar-image {
+    width: 190px; // Tamanho da imagem da esquerda
+  }
+
+  .navbar-right .navbar-image {
+    width: 320px; // Tamanho da imagem da direita
+  }
+  .navbar-left,
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+}
