@@ -1,153 +1,303 @@
-// src/styles/Home.scss
-
 @font-face {
-    font-family: "Roboto";
-    src: url("font/Roboto-Regular.ttf") format("truetype");
+  font-family: "Roboto";
+  src: url("font/Roboto-Regular.ttf") format("truetype");
+}
+
+$navbar-background: #fff;
+$navbar-height: 150px; // Altura da navbar
+$navbar-padding: 0 20px;
+$navbar-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+$body-background: #0d3638;
+$form-background: #fff;
+$form-border-radius: 10px;
+$form-padding: 20px;
+$form-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$form-width: 37.5rem;
+$form-max-width: 100%;
+$form-margin: 10px;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; // Alinha os itens no topo
+  background-color: $body-background;
+  margin: 0;
+  padding-top: $navbar-height; // Adiciona padding para compensar a navbar fixa
+}
+
+.formulario {
+  background: $form-background;
+  border-radius: $form-border-radius;
+  padding: $form-padding;
+  box-shadow: $form-shadow;
+  width: $form-width;
+  max-width: $form-max-width;
+  margin: $form-margin;
+
+  @media (max-width: 968px) {
+    width: 85%;
+    padding: 15px;
   }
-  
-  $form-background: #fff;
-  $form-border-radius: 10px;
-  $form-padding: 20px;
-  $form-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  $form-width: 37.5rem;
-  $form-max-width: 100%;
-  $form-margin: 10px;
-  
-  body {
+
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 10px;
+  }
+
+  @media (max-width: 620px) {
+    width: 95%;
+    padding: 8px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+  }
+
+  form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0d3638;
-    margin-top: 3.125rem;
-  }
-  
-  .formulario {
-    background: $form-background;
-    border-radius: $form-border-radius;
-    padding: $form-padding;
-    box-shadow: $form-shadow;
-    width: $form-width;
-    max-width: $form-max-width;
-    margin: $form-margin;
-  
-    form {
+    flex-direction: column;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="checkbox"],
+    select,
+    textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+
+      @media (max-width: 968px) {
+        font-size: 15px;
+        padding: 9px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      @media (max-width: 620px) {
+        font-size: 13px;
+        padding: 7px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 12px;
+        padding: 6px;
+      }
+    }
+
+    input[type="checkbox"] {
+      font-family: "Roboto";
+    }
+
+    label {
       display: flex;
       flex-direction: column;
-  
-      input[type="text"],
-      input[type="email"],
-      input[type="tel"],
-      input[type="checkbox"],
-      select,
-      textarea {
-        margin-bottom: 15px;
+      margin-bottom: 10px;
+      font-family: "Roboto";
+
+      input[type="text"] {
+        margin-top: 10px;
+        flex: 1;
+        font-family: "Roboto";
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-height: 150px;
+      overflow-y: auto;
+
+      li {
         padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 300;
+      margin-bottom: 10px;
+      font-family: "Roboto";
+
+      @media (max-width: 968px) {
+        font-size: 18px;
+      }
+
+      @media (max-width: 768px) {
         font-size: 16px;
       }
-  
-      input[type="checkbox"] {
-        font-family: "Roboto";
+
+      @media (max-width: 620px) {
+        font-size: 14px;
       }
-  
-      label {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10px;
-        font-family: "Roboto";
-  
-        input[type="text"] {
-          margin-top: 10px;
-          flex: 1;
-          font-family: "Roboto";
-        }
+
+      @media (max-width: 480px) {
+        font-size: 12px;
       }
-  
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 15px 0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        max-height: 150px;
-        overflow-y: auto;
-  
-        li {
-          padding: 10px;
-          cursor: pointer;
-  
-          &:hover {
-            background-color: #f0f0f0;
-          }
-        }
+    }
+
+    textarea {
+      max-width: 100%;
+      min-height: 150px; // Altura mínima do textarea
+      max-height: 300px; // Altura máxima do textarea
+      overflow: auto;
+      resize: none; // Impede o redimensionamento da textarea
+
+      @media (max-width: 968px) {
+        min-height: 140px;
+        max-height: 280px;
       }
-  
+
+      @media (max-width: 768px) {
+        min-height: 130px;
+        max-height: 260px;
+      }
+
+      @media (max-width: 620px) {
+        min-height: 120px;
+        max-height: 240px;
+      }
+
+      @media (max-width: 480px) {
+        min-height: 100px;
+        max-height: 200px;
+      }
+    }
+
+    button {
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+
+      @media (max-width: 968px) {
+        font-size: 15px;
+        padding: 9px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      @media (max-width: 620px) {
+        font-size: 13px;
+        padding: 7px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 12px;
+        padding: 6px;
+      }
+    }
+
+    .typeJobs {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
       p {
         font-size: 20px;
         font-weight: 300;
         margin-bottom: 10px;
         font-family: "Roboto";
-      }
-  
-      textarea {
-        max-width: 100%;
-        min-height: 150px; // Altura mínima do textarea
-        max-height: 300px; // Altura máxima do textarea
-        overflow: auto;
-        resize: none; // Impede o redimensionamento da textarea
-      }
-  
-      button {
-        padding: 10px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: #0056b3;
+
+        @media (max-width: 968px) {
+          font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
+
+        @media (max-width: 620px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 12px;
         }
       }
-  
-      .typeJobs {
+
+      label {
         display: flex;
         flex-direction: column;
-        margin-bottom: 20px;
-  
-        p {
-          font-size: 20px;
-          font-weight: 300;
-          margin-bottom: 10px;
-          font-family: "Roboto";
-        }
-  
-        label {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          width: 100%;
-          font-size: 20px;
-          font-weight: 300;
-  
-          input[type="text"] {
-            margin-top: 10px;
-            width: 100%;
-          }
-        }
-  
-        .add-icon {
-          cursor: pointer;
-          font-size: 16px;
+        align-items: flex-start;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 300;
+
+        input[type="text"] {
           margin-top: 10px;
-          align-self: flex-end;
-  
-          &:hover {
-            background-color: #0056b3;
-          }
+          width: 100%;
+        }
+
+        @media (max-width: 968px) {
+          font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
+
+        @media (max-width: 620px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 12px;
+        }
+      }
+
+      .add-icon {
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        align-self: flex-end;
+
+        &:hover {
+          color: #0056b3;
+        }
+
+        @media (max-width: 968px) {
+          font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 620px) {
+          font-size: 13px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 12px;
         }
       }
     }
   }
+}
