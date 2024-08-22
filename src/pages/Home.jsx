@@ -218,7 +218,7 @@ const Home = () => {
         )}
         {formData.regimeTrabalho === 'Pessoa Jurídica' && (
           <div className="typeJobs">
-            <label htmlFor="prestacaoServico">Em quais empresas você trabalha?</label>
+            <label htmlFor="prestacaoServico">Em qual empresa você trabalha?</label>
             <input type="text" name="prestacaoServico" value={formData.prestacaoServico} onChange={handleChange} placeholder="Onde presta serviço?" required />
             {extraFields.map((_, index) => (
               <input key={index} type="text" name={`prestacaoServico${index}`} placeholder="Onde presta serviço?" required />

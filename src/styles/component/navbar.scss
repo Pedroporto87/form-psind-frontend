@@ -1,11 +1,10 @@
 @font-face {
-    font-family: "Roboto";
-    src: url("font/Roboto-Regular.ttf")
-      format("truetype");
-  }
+  font-family: "Roboto";
+  src: url("font/Roboto-Regular.ttf") format("truetype");
+}
 
 $navbar-background: #fff;
-$navbar-height: 150px; // Aumentei a altura para acomodar imagens maiores
+$navbar-height: 150px; // Altura padrão da navbar
 $navbar-padding: 0 20px;
 $navbar-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
@@ -22,31 +21,139 @@ $navbar-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   top: 0;
   left: 0;
 
+  @media (max-width: 968px) {
+    height: auto; // Ajusta a altura para telas menores
+    padding: 0 15px;
+  }
+
+  @media (max-width: 768px) {
+    height: auto; // Ajusta a altura para tablets
+    padding: 0 10px;
+  }
+
+  @media (max-width: 620px) {
+    height: auto; // Ajusta a altura para telas menores
+    padding: 0 8px;
+  }
+
+  @media (max-width: 480px) {
+    height: auto; // Ajusta a altura para dispositivos móveis
+    padding: 0 5px;
+    flex-direction: column; // Alinha os itens verticalmente em telas menores
+  }
+
   .navbar-title {
-    font-size: 30px; // Aumentei o tamanho da fonte
+    font-size: 30px; // Tamanho padrão da fonte
     font-weight: bold;
     font-family: "Roboto";
-    color: #0D3638;
+    color: #0d3638;
     text-align: center;
     flex: 1;
-    margin: 0 20px; // Adicionei margem para centralizar melhor o título
+    margin: 0 20px; // Margem padrão para centralizar o título
+
+    @media (max-width: 968px) {
+      font-size: 26px; // Ajusta o tamanho da fonte para telas menores
+    }
+
+    @media (max-width: 768px) {
+      font-size: 24px; // Ajusta o tamanho da fonte para tablets
+    }
+
+    @media (max-width: 620px) {
+      font-size: 22px; // Ajusta o tamanho da fonte para telas menores
+    }
+
+    @media (max-width: 480px) {
+      font-size: 18px; // Ajusta o tamanho da fonte para dispositivos móveis
+    }
   }
 
   .navbar-image {
-    width: 210px; // Aumentei o tamanho das imagens
+    width: 210px; // Tamanho padrão das imagens
     height: 100px;
-    margin: 50px
+    margin: 50px;
+
+    @media (max-width: 968px) {
+      width: 180px; // Ajusta o tamanho das imagens para telas menores
+      height: 90px;
+      margin: 30px;
+    }
+
+    @media (max-width: 768px) {
+      width: 150px; // Ajusta o tamanho das imagens para tablets
+      height: 75px;
+      margin: 20px;
+    }
+
+    @media (max-width: 620px) {
+      width: 120px; // Ajusta o tamanho das imagens para telas menores
+      height: 60px;
+      margin: 15px;
+    }
+
+    @media (max-width: 480px) {
+      width: 100px; // Ajusta o tamanho das imagens para dispositivos móveis
+      height: 50px;
+      margin: 10px;
+    }
   }
+
   .navbar-left .navbar-image {
-    width: 190px; // Tamanho da imagem da esquerda
+    width: 190px; // Tamanho padrão da imagem da esquerda
+
+    @media (max-width: 968px) {
+      width: 160px; // Ajusta o tamanho da imagem da esquerda para telas menores
+      height: 80px;
+    }
+
+    @media (max-width: 768px) {
+      width: 120px; // Ajusta o tamanho da imagem da esquerda para tablets
+      height: 60px;
+    }
+
+    @media (max-width: 620px) {
+      width: 100px; // Ajusta o tamanho da imagem da esquerda para telas menores
+      height: 50px;
+    }
+
+    @media (max-width: 480px) {
+      width: 80px; // Ajusta o tamanho da imagem da esquerda para dispositivos móveis
+      height: 40px;
+    }
   }
 
   .navbar-right .navbar-image {
-    width: 320px; // Tamanho da imagem da direita
+    width: 320px; // Tamanho padrão da imagem da direita
+
+    @media (max-width: 968px) {
+      width: 260px; // Ajusta o tamanho da imagem da direita para telas menores
+      height: 130px;
+    }
+
+    @media (max-width: 768px) {
+      width: 200px; // Ajusta o tamanho da imagem da direita para tablets
+      height: 100px;
+    }
+
+    @media (max-width: 620px) {
+      width: 160px; // Ajusta o tamanho da imagem da direita para telas menores
+      height: 80px;
+    }
+
+    @media (max-width: 480px) {
+      width: 140px; // Ajusta o tamanho da imagem da direita para dispositivos móveis
+      height: 70px;
+    }
   }
+
   .navbar-left,
   .navbar-right {
     display: flex;
     align-items: center;
+
+    @media (max-width: 480px) {
+      justify-content: center; // Centraliza os itens em dispositivos móveis
+      width: 100%;
+    }
   }
 }
