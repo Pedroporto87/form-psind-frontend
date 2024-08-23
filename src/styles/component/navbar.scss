@@ -136,11 +136,13 @@ $navbar-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     @media (max-width: 620px) {
+      display: none;
       width: 160px; // Ajusta o tamanho da imagem da direita para telas menores
       height: 80px;
     }
 
     @media (max-width: 480px) {
+      display: none;
       width: 140px; // Ajusta o tamanho da imagem da direita para dispositivos móveis
       height: 70px;
     }
