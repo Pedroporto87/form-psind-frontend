@@ -13,13 +13,13 @@ const Home = () => {
     areaAtuacao: '',
     especificarAreaAtuacao: '',
     regimeTrabalho: '',
-    nomeEmpresa: '',
-    orgaoEfetivo: '',
-    orgaoTemporario: '',
-    prestacaoServico: '',
-    terceirizadoEmpresa: '',
-    cooperativaNome: '',
-    outrosRegime: '',
+    nomeEmpresa: [],
+    orgaoEfetivo: [],
+    orgaoTemporario: [],
+    prestacaoServico: [],
+    terceirizadoEmpresa: [],
+    cooperativaNome: [],
+    outrosRegime: [],
     sugestoes: ''
   });
 
@@ -64,13 +64,13 @@ const Home = () => {
     setFormData({
       ...formData,
       [name]: value,
-      nomeEmpresa: '',
-      orgaoEfetivo: '',
-      orgaoTemporario: '',
-      prestacaoServico: '',
-      terceirizadoEmpresa: '',
-      cooperativaNome: '',
-      outrosRegime: ''
+      nomeEmpresa: [],
+      orgaoEfetivo: [],
+      orgaoTemporario: [],
+      prestacaoServico: [],
+      terceirizadoEmpresa: [],
+      cooperativaNome: [],
+      outrosRegime: []
     });
     setExtraFields([]);
   };
