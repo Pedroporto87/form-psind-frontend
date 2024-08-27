@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { submitForm } from '../services/formService';
+import { submitForm } from '../helpers/formService';
 import axios from 'axios';
 import '../styles/FormComponent.scss';
 
