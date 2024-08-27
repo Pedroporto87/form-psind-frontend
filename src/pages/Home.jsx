@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { submitForm } from '../helpers/formService';
 import axios from 'axios';
-import '../styles/FormComponent.scss';
+import '../styles/Home.scss';
 
 const Home = () => {
   const [formData, setFormData] = useState({
