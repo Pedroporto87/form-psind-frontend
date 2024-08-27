@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { submitForm } from '../helpers/formService';
 import axios from 'axios';
 import '../styles/Home.scss';
 
@@ -83,7 +84,7 @@ const Home = () => {
     setShowSuggestions(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!formData.nome || !formData.email || !formData.telefone || !formData.cidade || !formData.situacao || !formData.areaAtuacao || !formData.regimeTrabalho || !formData.sugestoes) {
@@ -125,7 +126,13 @@ const Home = () => {
       return;
     }
 
-    console.log(formData);
+    try {
+      const response = await submitForm(formData);
+      console.log('Formulário enviado com sucesso:', response);
+      alert('Formulário enviado com sucesso!');
+    } catch (error) {
+      alert('Erro ao enviar formulário. Tente novamente mais tarde.');
+    }
   };
 
   const addExtraField = () => {
