@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { submitForm } from '../helpers/formService';
-import axios from 'axios';
+import { fetchCidades } from '../helpers/fetchCidades';
 import '../styles/Home.scss';
 
 const Home = () => {
@@ -30,16 +30,16 @@ const Home = () => {
   const [extraFields, setExtraFields] = useState([]);
 
   useEffect(() => {
-    const fetchCidades = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados/23/municipios');
-        setCidades(response.data);
+        const cidadesData = await fetchCidades();
+        setCidades(cidadesData);
       } catch (error) {
         console.error('Erro ao buscar cidades:', error);
       }
     };
 
-    fetchCidades();
+    fetchData();
   }, []);
 
   const handleChange = (e) => {
@@ -131,6 +131,7 @@ const Home = () => {
       console.log('Formulário enviado com sucesso:', response);
       alert('Formulário enviado com sucesso!');
     } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
       alert('Erro ao enviar formulário. Tente novamente mais tarde.');
     }
   };
