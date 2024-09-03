@@ -91,7 +91,7 @@ const Home = () => {
       return;
     }
     
-    const crpRegex = /^\d{6}$/;
+    const crpRegex = /^\d{7}$/;
     if (!crpRegex.test(formData.crp)) {
       alert('O CRP deve conter exatamente 7 números.');
       return;
