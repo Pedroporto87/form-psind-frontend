@@ -8,7 +8,6 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
     "backend": "cd ../backend && npm start",
     "frontend": "vite"
   },
