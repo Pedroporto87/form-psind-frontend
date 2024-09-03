@@ -28,6 +28,7 @@ const Home = () => {
   const [filteredCidades, setFilteredCidades] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [extraFields, setExtraFields] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +36,7 @@ const Home = () => {
         const cidadesData = await fetchCidades();
         setCidades(cidadesData);
       } catch (error) {
-        console.error('Erro ao buscar cidades:', error);
+        setErrorMessage('Erro ao buscar cidades:', error);
       }
     };
 
@@ -91,6 +92,12 @@ const Home = () => {
       alert('Por favor, preencha todos os campos obrigatórios.');
       return;
     }
+    setErrorMessage('');
+    const crpRegex = /^\d{6}$/;
+    if (!crpRegex.test(formData.crp)) {
+      setErrorMessage('O CRP deve conter exatamente 6 números.');
+      return;
+    }
 
     if (formData.areaAtuacao === 'Outros' && !formData.especificarAreaAtuacao) {
       alert('Por favor, especifique a área de atuação.');
@@ -132,7 +139,7 @@ const Home = () => {
       alert('Formulário enviado com sucesso!');
     } catch (error) {
       console.error('Erro ao enviar formulário:', error);
-      alert('Erro ao enviar formulário. Tente novamente mais tarde.');
+      alert(error.message)
     }
   };
 
@@ -143,6 +150,7 @@ const Home = () => {
   return (
     <section className='formulario'> 
       <form onSubmit={handleSubmit}>
+       {errorMessage && <div className="error-message">{errorMessage}</div>}
         <input type="text" name="nome" value={formData.nome} onChange={handleChange} placeholder="Nome" required />
         <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="E-mail" required />
         <input type="tel" name="telefone" value={formData.telefone} onChange={handleChange} placeholder="Telefone" required />
