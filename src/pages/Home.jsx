@@ -90,12 +90,6 @@ const Home = () => {
       alert('Por favor, preencha todos os campos obrigatórios.');
       return;
     }
-    
-    const crpRegex = /^\d{7}$/;
-    if (!crpRegex.test(formData.crp)) {
-      alert('O CRP deve conter exatamente 7 números.');
-      return;
-    }
 
     if (formData.areaAtuacao === 'Outros' && !formData.especificarAreaAtuacao) {
       alert('Por favor, especifique a área de atuação.');
@@ -135,6 +129,7 @@ const Home = () => {
       const response = await submitForm(formData);
       console.log('Formulário enviado com sucesso:', response);
       alert('Formulário enviado com sucesso!');
+      setFormData('')
     } catch (error) {
       console.error('Erro ao enviar formulário:', error);
       alert(error.message)
