@@ -1,0 +1,15 @@
+.off-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d3638;
+    height: 100vh;
+    .off-p{
+        background-color: white;
+        color: #0d3638;
+        font-size: 25px;
+        border-radius: 5px;
+        padding: 10px;
+        font-weight: 700;
+    }
+}
